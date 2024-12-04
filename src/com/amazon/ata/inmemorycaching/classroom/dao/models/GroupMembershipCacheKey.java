@@ -2,6 +2,15 @@ package com.amazon.ata.inmemorycaching.classroom.dao.models;
 
 import java.util.Objects;
 
+// this is the key for accessing the cache
+// since it requires multiple values, we need to hold and manage both values into one object
+
+// this class is immutable
+// (1) declared with 'final'
+// (2) contains final instance data
+// (3) no setters
+// (4) only uses immutable data (both strings which are in and of themselves immutable)
+
 public final class GroupMembershipCacheKey {
 
     private final String userId;
@@ -37,4 +46,5 @@ public final class GroupMembershipCacheKey {
 
         return userId.equals(request.userId) && groupId.equals(request.groupId);
     }
+
 }
